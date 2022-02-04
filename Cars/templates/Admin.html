@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/Admin.css">
+    <title>Admin</title>
+</head>
+<body>
+    <div class="background">
+        <header>
+            <span class="logo">Welcome {{User}}</span>
+            <span class="telephone">Tel. No.: +1 800 603 6035</span>
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="javascript:view('home')" class="active" id="home-link">Home</a>
+                </li>
+                <li>
+                    <a href="javascript:view('car')" id="car-link">Cars</a>
+                </li>
+                <li>
+                    <a href="javascript:view('cust')" id="cust-link">Customers</a>
+                </li>
+                <li>
+                    <a href="javascript:view('report')" id="report-link">Report</a>
+                </li>
+                <li>
+                    <a href="/home/">Sign Out</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="view-box">
+            <div id="home-box">
+                <label class="logo-1">Modern-Classic</label>
+                <label class="logo-2">Incredible</label>
+            </div>
+            <div id="car-box">
+                <div class="car-control">
+                    <form id="car-form" autocomplete="off">
+                        <input type="text" id="mod-inp" class="input-field" placeholder="Car Model">
+                        <br><br>
+                        <button type="button" class="submit-btn" onclick="model()">Search Car</button>
+                        <br><br>
+                        <select class="input-field" onchange="company(value)">
+                            <option selected disabled>Select Company</option>
+                            <option value="Hyundai">Hyundai</option>
+                            <option value="Honda">Honda</option>
+                            <option value="Maruti Suzuki">Maruti Suzuki</option>
+                            <option value="BMW">BMW</option>
+                            <option value="Renault">Renault</option>
+                            <option value="Ford">Ford</option>
+                            <option value="Volkswagen">Volkswagen</option>
+                        </select>
+                        <br><br>
+                        <button type="button" class="submit-btn" onclick="allCars()">Show All Cars</button>
+                        <br><br>
+                        <a class="type-link" href="javascript:type('SUV')">SUV Cars</a><br><br>
+                        <a class="type-link" href="javascript:type('MUV')">MUV Cars</a><br><br>
+                        <a class="type-link" href="javascript:type('Coupe')">Coupe Cars</a><br><br>
+                        <a class="type-link" href="javascript:type('Sedan')">Sedan Cars</a><br><br>
+                        <a class="type-link" href="javascript:type('Hatchback')">Hatchback Cars</a><br><br>
+                    </form>
+                </div>
+                <div class="car-result">
+                    <div id="car">
+                        <div class="car-div1">
+                            <button class="submit-btn" type="button" onclick="showCars('dec')">Previous</button><br><br>
+                            <button class="submit-btn" type="button" onclick="showCars('inc')">Next</button><br><br>
+                            <span id="car-num"></span><br><br>
+                            <img id="pho" src="">
+                        </div>
+                        <div class="car-div2">
+                            <span id="mod"></span><br><br>
+                            <span id="comp"></span><br><br>
+                            <span id="typ"></span><br><br>
+                            <span id="eng"></span><br><br>
+                            <span id="mil"></span><br><br>
+                            <span id="tran"></span><br><br>
+                            <span id="fue"></span><br><br>
+                            <span id="pri"></span><br><br>
+                        </div>
+                    </div>
+                    <div id="car-mess"></div>
+                </div>
+                <div class="car-action">
+                    <div class="button-box">
+                        <div id="car-btn"></div>
+                        <button type="button" class="toggle-btn" id="newcar-btn" onclick="newCarBlock()">New Car</button>
+                        <button type="button" class="toggle-btn" id="editcar-btn" onclick="editCarBlock()">Change Price</button>
+                    </div>
+                    <form id="newcar-form" class="input-group" method="post" onsubmit="newCar()" autocomplete="off">
+                        <input type="text" id="newcar-mod" class="input-field" placeholder="Car Model" required>
+                        <input type="text" id="newcar-comp" class="input-field" placeholder="Car Company" required>
+                        <input type="text" id="newcar-typ" class="input-field" placeholder="Car Type" required>
+                        <input type="number" id="newcar-eng" class="input-field" placeholder="Engine CC" required>
+                        <input type="number" step="any" id="newcar-mil" class="input-field" placeholder="Mileage in KM/L" required>
+                        <input type="text" id="newcar-tran" class="input-field" placeholder="Transmission" required>
+                        <input type="text" id="newcar-ful" class="input-field" placeholder="Fuel Type" required>
+                        <input type="text" id="newcar-pho" class="input-field" placeholder="Photo Link without '&'" required>
+                        <select id="newcar-prity" class="input-field" required>
+                            <option selected disabled>Select Price Type</option>
+                            <option value="Thousand">Thousand</option>
+                            <option value="Lakh">Lakh</option>
+                            <option value="Crore">Crore</option>
+                        </select>
+                        <input type="number" step="any" id="newcar-pri" class="input-field" placeholder="Price" required><br><br>
+                        <button type="submit" class="submit-btn">Add Car</button><br><br><br><br>
+                    </form>
+                    <form id="editcar-form" class="input-group" method="post" onsubmit="editCar()" autocomplete="off">
+                        <input type="text" id="editcar-mod" class="input-field" placeholder="Car Model" required>
+                        <select id="editcar-prity" class="input-field" required>
+                            <option selected disabled>Select Price Type</option>
+                            <option value="Thousand">Thousand</option>
+                            <option value="Lakh">Lakh</option>
+                            <option value="Crore">Crore</option>
+                        </select>
+                        <input type="number" step="any" id="editcar-pri" class="input-field" placeholder="Price in Lakh" required><br><br>
+                        <button type="submit" class="submit-btn">Change Price</button><br><br><br><br>
+                    </form>
+                </div>
+            </div>
+            <div id="cust-box">
+                <div class="cust-control">
+                    <form id="cust-form" autocomplete="off">
+                        <br><br>
+                        <input type="text" id="cust-id" class="input-field" placeholder="Customer Id">
+                        <br><br>
+                        <button type="button" class="submit-btn" onclick="custId()">Search Customer</button>
+                        <br><br>
+                        <input type="text" id="cust-nm" class="input-field" placeholder="Customer Name">
+                        <br><br>
+                        <button type="button" class="submit-btn" onclick="custNm()">Search Customer</button>
+                        <br><br>
+                        <button type="button" class="submit-btn" onclick="allCust('all')">Show All Customer</button>
+                        <br><br>
+                    </form>
+                </div>
+                <div class="cust-result">
+                    <div id="cust">
+                        <br>
+                        <button class="submit-btn" type="button" onclick="showCust('dec')">Previous</button><br><br>
+                        <button class="submit-btn" type="button" onclick="showCust('inc')">Next</button><br><br>
+                        <span id="cust-num"></span><br><br><br>
+                        <span id="id"></span><br><br>
+                        <span id="nm"></span><br><br>
+                        <span id="em"></span><br><br>
+                        <span id="mo"></span><br><br>
+                        <span id="ad"></span><br><br>
+                    </div>
+                    <div id="cust-mess"></div>
+                </div>
+                <div class="cust-action">
+                    <div class="button-box">
+                        <div id="cust-btn"></div>
+                        <button type="button" class="toggle-btn" id="newcust-btn" onclick="newCustBlock()">New Cust</button>
+                        <button type="button" class="toggle-btn" id="editcust-btn" onclick="editCustBlock()">Edit Details</button>
+                    </div>
+                    <form id="newcust-form" class="input-group" method="post" onsubmit="newCust()" autocomplete="off">
+                        <input type="text" id="newcust-nm" class="input-field" placeholder="Name" required><br>
+                        <input type="email" id="newcust-em" class="input-field" placeholder="Email Id" required><br>
+                        <input type="text" id="newcust-mo" class="input-field" placeholder="Mobile Number with Country Code" required><br>
+                        <textarea id="newcust-ad" cols="25" rows="5" class="input-field" placeholder="Address" required></textarea>
+                        <button type="submit" class="submit-btn">Add Customer</button><br><br><br><br>
+                    </form>
+                    <form id="editcust-form" class="input-group" method="post" onsubmit="editCust()" autocomplete="off">
+                        <input type="text" id="editcust-id" class="input-field" placeholder="Customer Id" required><br><br>
+                        <input type="text" id="editcust-mo"class="input-field" placeholder="Mobile Number with Country Code" required><br><br>
+                        <button type="submit" class="submit-btn">Change Number</button><br><br><br><br>
+                    </form>
+                </div>
+            </div>
+            <div id="report-box">
+                <div id="chart"></div>
+                <div id="chart-btn">
+                    <br><br><br><br>
+                    <button class="submit-btn" onclick="showReport('company')">Company search report</button>
+                    <br><br><br>
+                    <button class="submit-btn" onclick="showReport('type')">Type search report</button>
+                    <br><br><br>
+                    <button class="submit-btn" onclick="showReport('model')">Model search report</button>
+                    <br><br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/static/Admin.js"></script>
+</body>
+</html>
