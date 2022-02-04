@@ -1,0 +1,440 @@
+/*  #################################### For All #################################### */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+/*  #################################### Background #################################### */
+.background{
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://wallpapertops.com/walldb/original/c/8/b/629849.jpg);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    overflow: hidden;
+}
+
+/*  #################################### Form Content #################################### */
+.button-box{
+    width: 300px;
+    margin: 35px 40px;
+    position: relative;
+    box-shadow: 0 0 20px 9px #a9ffff;
+    border-radius: 30px;
+}
+.toggle-btn{
+    padding: 10px 40px;
+    cursor: pointer;
+    color: #000;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+.input-group{
+    top: 130px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+.input-field{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    color: #000;
+    text-indent: 10px;
+    background: linear-gradient(to right, #00eeff,#a9ffff);
+}
+::placeholder{
+    font-size: 13px;
+    color: #000;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+.submit-btn{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    color: #000;
+    margin: auto;
+    background: linear-gradient(to right, #00eeff,#a9ffff);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+.message{
+    position: absolute;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    display: none;
+}
+/*  #################################### Header Bar #################################### */
+header{
+    position: fixed;
+    box-sizing: initial;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: transparent;
+}
+.logo{
+    color: #80ff40;
+    font-size: 40px;
+    line-height: 80px;
+    padding: 0 40px;
+    font-weight: bold;
+}
+.telephone{
+    float: right;
+    margin-right: 100px;
+    color: #80ff40;
+    font-size: 25px;
+    line-height: 80px;
+    font-weight: bold;
+}
+
+/*  #################################### Navigation Bar #################################### */
+nav{
+    position: fixed;
+    box-sizing: initial;
+    top: 80px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+nav ul{
+    float: right;
+    margin-left: 40px;
+}
+nav li{
+    display: inline-block;
+    line-height: 60px;
+    margin: 0 20px;
+}
+nav a{
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 7px 10px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: .5s;
+}
+a.active{
+    border: 2px solid #80ff40;
+}
+nav a:hover{
+    background: #80ff40;
+    color: #00f;
+}
+
+/*  #################################### View Box #################################### */
+.view-box{
+    position: fixed;
+    box-sizing: initial;
+    top: 140px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+#home-box{
+    position: fixed;
+    box-sizing: initial;
+    top: 140px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+}
+#car-box{
+    position: fixed;
+    box-sizing: initial;
+    top: 140px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+#cust-box{
+    position: fixed;
+    box-sizing: initial;
+    top: 140px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+#report-box{
+    position: fixed;
+    box-sizing: initial;
+    top: 140px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+
+/*  #################################### Home Box #################################### */
+.logo-1{
+    font-size: 60px;
+    color: #00eeff;
+    margin-top: 200px;
+    margin-left: 200px;
+    text-transform: uppercase;
+    display: block;
+}
+.logo-2{
+    font-size: 90px;
+    color: #80ff40;
+    margin-left: 200px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+}
+
+/*  #################################### car box #################################### */
+.car-control{
+    position: absolute;
+    box-sizing: initial;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    padding: 40px 20px;
+    background: transparent;
+}
+.car-result{
+    position: absolute;
+    box-sizing: initial;
+    color: #00eeff;
+    top: 0;
+    bottom: 0;
+    left: 300px;
+    right: 400px;
+    margin-left: 50px;
+    background: transparent;
+}
+.car-action{
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-sizing: initial;
+    width: 400px;
+    height: 500px;
+    background: transparent;
+    padding: 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#car-btn{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 150px;
+    height: 100%;
+    background: linear-gradient(to right, #00eeff,#a9ffff);
+    border-radius: 30px;
+    transition: .5s;
+}
+#newcar-btn{
+    color: #000;
+}
+#editcar-btn{
+    color: #fff;
+}
+#newcar-form{
+    left: 50px;
+}
+#editcar-form{
+    left: 450px;
+}
+.car-form{
+    margin: auto;
+    position: relative;
+    background: transparent;
+    padding: 20px;
+    overflow: hidden;
+}
+.type-link{
+
+    margin-left: 20px;
+    color: #00eeff;
+    text-decoration: none;
+    font-size: 20px;
+}
+#car{
+    position: absolute;
+    box-sizing: initial;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px 20px;
+    background: transparent;
+    display: none;
+    color: #00eeff;
+}
+.car-div1{
+    position: absolute;
+    box-sizing: initial;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 400px;
+    padding: 20px 20px;
+    text-align: center;
+    background: transparent;
+}
+.car-div2{
+    position: absolute;
+    box-sizing: initial;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 400px;
+    padding: 40px 40px;
+    background: transparent;
+    font-size: 20px;
+}
+#car img{
+    width: 400px;
+}
+#car-mess{
+    position: absolute;
+    left: 180px;
+    top: 250px;
+    width: 400px;
+    color: #f00;
+    font-size: 30px;
+    font-weight: bold;
+    display: none;
+}
+
+/*  #################################### customer box #################################### */
+.cust-control{
+    position: absolute;
+    box-sizing: initial;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    padding: 40px 20px;
+    background: transparent;
+}
+.cust-result{
+    position: absolute;
+    box-sizing: initial;
+    color: #80ff40;
+    top: 0;
+    bottom: 0;
+    left: 300px;
+    width: 400px;
+    margin-left: 50px;
+    padding: 20px 40px;
+    text-align: center;
+    background: transparent;
+}
+.cust-action{
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-sizing: initial;
+    width: 400px;
+    height: 500px;
+    background: transparent;
+    padding: 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#cust-btn{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 150px;
+    height: 100%;
+    background: linear-gradient(to right, #00eeff,#a9ffff);
+    border-radius: 30px;
+    transition: .5s;
+}
+#newcust-btn{
+    color: #000;
+}
+#editcust-btn{
+    color: #fff;
+}
+#newcust-form{
+    left: 50px;
+}
+#editcust-form{
+    left: 450px;
+}
+.cust-form{
+    width: 300px;
+    margin: auto;
+    position: relative;
+    background: transparent;
+    padding: 20px;
+    overflow: hidden;
+}
+#cust{
+    position: absolute;
+    box-sizing: initial;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px 20px;
+    background: transparent;
+    display: none;
+    color: #80ff40;
+    font-size: 20px;
+}
+#cust-mess{
+    position: absolute;
+    left: 180px;
+    top: 250px;
+    width: 400px;
+    color: #f00;
+    font-size: 30px;
+    font-weight: bold;
+    display: none;
+}
+
+/*  #################################### Report box #################################### */
+#chart{
+    position: absolute;
+    box-sizing: initial;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 300px;
+    color: #f00;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    background: transparent;
+    display: block;
+}
+#chart-btn{
+    position: absolute;
+    box-sizing: initial;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    right: 0;
+    background: transparent;
+    display: block;
+}
