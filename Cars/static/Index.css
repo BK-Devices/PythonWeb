@@ -1,0 +1,511 @@
+/*  #################################### For All #################################### */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+/*  #################################### Background #################################### */
+.background{
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://wallpapertops.com/walldb/original/c/8/b/629849.jpg);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    overflow: hidden;
+}
+
+/*  #################################### General #################################### */
+img{
+    border: none;
+    border-radius: 8px;
+    padding: 5px;
+    width: 200px;
+}
+.name{
+    font-size: 25px;
+    color: #80ff40;
+}
+.details{
+    font-size: 15px;
+    color: #fff;
+}
+.input-field{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    color: #000;
+    text-indent: 10px;
+    background: linear-gradient(to right, #00eeff,#a9ffff);
+}
+::placeholder{
+    font-size: 13px;
+    color: #000;
+}
+::-ms-reveal{
+    filter: invert(0%);
+    font-size: 18px;
+}
+.submit-btn{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    color: #000;
+    margin: auto;
+    background: linear-gradient(to right, #00eeff,#a9ffff);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+
+/*  #################################### Side Bar #################################### */
+.side-bar{
+    position: fixed;
+    box-sizing: initial;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 500px;
+    background-color: rgba(90, 90, 90, 0.7);
+    display: block;
+}
+.side-box{
+    position: fixed;
+    box-sizing: initial;
+    top: 140px;
+    right: 0;
+    bottom: 0;
+    width: 500px;
+}
+#home-content{
+    padding: 20px 20px;
+    display: block;
+}
+#form-content{
+    padding: 20px 20px;
+    display: none;
+}
+#cars-content{
+    padding: 20px 20px;
+    display: none;
+}
+#service-content{
+    padding: 20px 20px;
+    display: none;
+}
+#about-content{
+    padding: 0px 20px;
+    display: none;
+}
+
+/*  #################################### content #################################### */
+#home-content .name{
+    padding: 40px 20px;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#form-content span{
+    padding: 0px 20px;
+    display: inline-block;
+    font-weight: bold;
+}
+#form-content .name{
+    padding: 40px 20px;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+#form-content .points{
+    padding: 5px 20px;
+    color: #fff;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+#cars-content .name{
+    padding: 40px 20px;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.car-png{
+    width: 450px;
+}
+#service-content .name{
+    padding: 40px 20px;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#service-content .details{
+    padding: 10px 20px;
+    font-size: 20px;
+}
+#about-content .name{
+    padding: 15px 20px;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/*  #################################### Header Bar #################################### */
+header{
+    position: fixed;
+    box-sizing: initial;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: transparent;
+}
+.logo{
+    color: #80ff40;
+    font-size: 40px;
+    line-height: 80px;
+    padding: 0 40px;
+    font-weight: bold;
+}
+.telephone{
+    float: right;
+    margin-right: 100px;
+    color: #80ff40;
+    font-size: 25px;
+    line-height: 80px;
+    font-weight: bold;
+}
+
+/*  #################################### Navigation Bar #################################### */
+nav{
+    position: fixed;
+    box-sizing: initial;
+    top: 80px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+nav ul{
+    float: right;
+    margin-left: 40px;
+}
+nav li{
+    display: inline-block;
+    line-height: 60px;
+    margin: 0 20px;
+}
+nav a{
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 7px 10px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: .5s;
+}
+a.active{
+    border: 2px solid #80ff40;
+}
+nav a:hover{
+    background: #80ff40;
+    color: #00f;
+}
+
+/*  #################################### View Box #################################### */
+.view-box{
+    position: fixed;
+    box-sizing: initial;
+    top: 140px;
+    left: 0;
+    right: 500px;
+    bottom: 0;
+}
+#home-box{
+    position: fixed;
+    box-sizing: initial;
+    top: 140px;
+    left: 0;
+    right: 500px;
+    bottom: 0;
+    display: block;
+}
+#form-box{
+    width: 400px;
+    height: 500px;
+    position: relative;
+    margin: 5% 30%;
+    background: transparent;
+    padding: 5px;
+    overflow: hidden;
+    display: none;
+}
+#cars-box{
+    position: fixed;
+    box-sizing: initial;
+    top: 140px;
+    left: 0;
+    right: 500px;
+    bottom: 0;
+    display: none;
+}
+#service-box{
+    position: fixed;
+    box-sizing: initial;
+    top: 140px;
+    left: 0;
+    right: 500px;
+    bottom: 0;
+    display: none;
+}
+#about-box{
+    position: fixed;
+    box-sizing: initial;
+    top: 140px;
+    left: 0;
+    right: 500px;
+    bottom: 0;
+    display: none;
+}
+
+/*  #################################### Home Box #################################### */
+.logo-1{
+    font-size: 60px;
+    color: #00eeff;
+    margin-top: 200px;
+    margin-left: 200px;
+    text-transform: uppercase;
+    display: block;
+}
+.logo-2{
+    font-size: 90px;
+    color: #80ff40;
+    margin-left: 200px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+}
+
+/*  #################################### Form Box #################################### */
+.button-box{
+    width: 220px;
+    margin: 35px 70px;
+    position: relative;
+    box-shadow: 0 0 20px 9px #a9ffff;
+    border-radius: 30px;
+}
+.toggle-btn{
+    padding: 10px 30px;
+    cursor: pointer;
+    color: #000;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+#btn{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #00eeff,#a9ffff);
+    border-radius: 30px;
+    transition: .5s;
+}
+#signin-btn{
+    color: #000;
+}
+#signup-btn{
+    color: #fff;
+}
+#signin{
+    left: 50px;
+}
+#signup{
+    left: 450px;
+}
+.input-group{
+    top: 130px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+.check-box{
+    margin: 30px 10px 30px 0;
+}
+#clarification{
+    color: #00eeff;
+    font-size: 12px;
+    bottom: 68px;
+    position: absolute;
+}
+.message{
+    position: absolute;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    display: none;
+}
+#signin-mess{
+    font-size: 14px;
+    padding: 10px 10px;
+}
+#signup-mess{
+    font-size: 14px;
+    padding: 10px 10px;
+}
+
+/*  #################################### Cars Box #################################### */
+.car-control{
+    position: absolute;
+    box-sizing: initial;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    padding: 40px 20px;
+    background: transparent;
+}
+.car-result{
+    position: absolute;
+    box-sizing: initial;
+    color: #80ff40;
+    top: 0;
+    left: 300px;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+}
+.car-form{
+    width: 240px;
+    margin: auto;
+    position: relative;
+    background: transparent;
+    padding: 20px;
+    overflow: hidden;
+}
+.type-link{
+
+    margin-left: 20px;
+    color: #00eeff;
+    text-decoration: none;
+    font-size: 20px;
+}
+#car{
+    position: absolute;
+    box-sizing: initial;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px 20px;
+    background: transparent;
+    display: none;
+    color: #00eeff;
+}
+.car-div1{
+    position: absolute;
+    box-sizing: initial;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 350px;
+    padding: 20px 20px;
+    text-align: center;
+    background: transparent;
+}
+.car-div2{
+    position: absolute;
+    box-sizing: initial;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 350px;
+    padding: 40px 40px;
+    background: transparent;
+    font-size: 20px;
+}
+#car img{
+    width: 350px;
+}
+#car-mess{
+    position: absolute;
+    left: 180px;
+    top: 250px;
+    width: 400px;
+    color: #f00;
+    font-size: 30px;
+    font-weight: bold;
+    display: none;
+}
+
+/*  #################################### Service Box #################################### */
+#service-box .block{
+    display: inline-block;
+    width: 300px;
+    padding: 20px 20px;
+    margin-left: 30px;
+    background-color: rgba(90, 90, 90, 0.7);;
+}
+#service-box #service *{
+    display: inline-block;
+    padding: 10px 5px;
+}
+#service-box .details{
+    font-size: 20px;
+}
+#service-box ul li{
+    position: relative;
+    width: 100%;
+    display: flex;
+    color: #fff;
+}
+#service-box ul li:hover{
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    color: #80ff40;
+}
+#service-box ul li .icon{
+    position: relative;
+    height: 60px;
+    line-height: 90px;
+    text-align: center;
+}
+#service-box ul li .icon img{
+    width: 50px;
+}
+#service-box ul li .title{
+    position: relative;
+    font-size: 20px;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: normal;
+    text-transform: capitalize;
+}
+
+/*  #################################### About Box #################################### */
+#about-box .block{
+    display: inline-block;
+    margin-left: 80px;
+    width: 400px;
+    padding: 20px 20px;
+    background-color: rgba(90, 90, 90, 0.7);
+}
+#about-box .block *{
+    display: inline-block;
+    padding: 10px 5px;
+}
+#about-box .block .details{
+    font-size: 20px;
+}
