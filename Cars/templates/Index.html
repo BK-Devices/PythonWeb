@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/Index.css">
+    <title>Index</title>
+</head>
+<body>
+    <div class="background">
+        <div class="side-bar">
+            <div class="side-box">
+                <div id="home-content">
+                    <span class="name">Car detailing</span>
+                    <span class="name">Quality car maintenance</span>
+                    <span class="name">You can entrust your car to us</span>
+                    <span class="name">Fair & friendly service</span>
+                </div>
+                <div id="form-content">
+                    <span class="name">FOR OFFICE USE ONLY</span>
+                    <span class="points">Take Care while Sign Up</span>
+                    <span class="points">User Id must be >4 characters</span>
+                    <span class="points">Name must be >4 characters</span>
+                    <span class="points">Password must be >8 characters</span>
+                </div>
+                <div id="cars-content">
+                    <span class="name">Search a Cars</span>
+                    <span class="name">Different Cars Available</span>
+                    <img class="car-png" src="https://static.vecteezy.com/system/resources/previews/000/372/157/original/classic-seventies-style-american-convertible-muscle-car-cartoon-vector.jpg">
+                </div>
+                <div id="service-content">
+                    <span class="name">Preventive maintenance</span>
+                    <p class="details">
+                        A well-maintained vehicle is more fuel efficient, more reliable, and will last longer,
+                        making the most of your auto investment. And your neighborhood Car Repair is the
+                        perfect car care partner. Our experts are trained to perform diagnostic and repair
+                        services on all makes and models, and we can take care of your factory recommended
+                        maintenance service as well. <br><br>
+                        We have over 1,200 locations across the U.S. and Canada to provide car maintenance
+                        and car repair services wherever you are. We are always happy to help you, so feel
+                        free to contact us!
+                    </p>
+                </div>
+                <div id="about-content">
+                    <span class="name">Our standard</span>
+                    <p class="details">
+                        NAM ALIQUAM PRETIUM FEUGIAT DUIS SEM EST VIVERRA <br><br> Sed do eiusmod tempor incididu
+                        enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                        ex ea commodo consequat. Duis aute irure dolor. In reprehenderit in voluptate
+                        velit esse cillum dolore. Lorem ipsum dolor.
+                    </p>
+                    <span class="name">Premium quality</span>
+                    <p class="details">
+                        Duis sem est, viverra eu interdum ac, suscipit nec mauris. Suspendisse commodo
+                        tempor sagittis! <br><br> In justo est, sollicitudin eu scelerisque pretium, placerat eget
+                        elit. Praesent faucibus rutrum odio at rhoncus. Pellentesque vitae tortor id neque
+                    </p>
+                    <span class="name">our principles</span>
+                    <p class="details">
+                        Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor. <br><br>
+                        Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. <br><br>
+                        Exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <header>
+            <span class="logo">Automobiles Showroom</span>
+            <span class="telephone">Tel. No.: +1 800 603 6035</span>
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="javascript:view('home')" class="active" id="home-link">Home</a>
+                </li>
+                <li>
+                    <a href="javascript:view('admin')" id="admin-link">Admin</a>
+                </li>
+                <li>
+                    <a href="javascript:view('cars')" id="cars-link">Cars</a>
+                </li>
+                <li>
+                    <a href="javascript:view('service')" id="service-link">Services</a>
+                </li>
+                <li>
+                    <a href="javascript:view('about')" id="about-link">About</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="view-box">
+            <div id="home-box">
+                <label class="logo-1">Modern-Classic</label>
+                <label class="logo-2">Incredible</label>
+            </div>
+            <div id="form-box">
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button type="button" class="toggle-btn" id="signin-btn" onclick="signInBlock()">Sign In</button>
+                    <button type="button" class="toggle-btn" id="signup-btn" onclick="signUpBlock()">Sign Up</button>
+                </div>
+                <form id="signin" class="input-group" method="post" onsubmit="signIn()" autocomplete="off"> {% csrf_token %}
+                    <input type="text" id="signin-id" name="uid" class="input-field" placeholder="User Id" required>
+                    <p id="signin-id-mess" class="message"></p><br><br>
+                    <input type="password" id="signin-psw" class="input-field" placeholder="Password" required>
+                    <input type="checkbox" class="check-box"><span id="clarification">Remember Password</span>
+                    <button type="submit" class="submit-btn">Sign In</button>
+                    <p id="signin-mess" class="message"></p>
+                </form>
+                <form id="signup" class="input-group" method="post" onsubmit="signUp()" autocomplete="off"> {% csrf_token %}
+                    <input type="text" id="signup-id" class="input-field" placeholder="User Id" required>
+                    <p id="signup-id-mess" class="message"></p><br><br>
+                    <input type="text" id="signup-nm" class="input-field" placeholder="Name" required>
+                    <input type="email" id="signup-em" class="input-field" placeholder="Email Id" required>
+                    <input type="password" id="signup-psw" class="input-field" placeholder="Password" required>
+                    <p id="signup-psw-mess" class="message"></p>
+                    <input type="checkbox" class="check-box" required><span id="clarification">I agree to the terms and conditions</span>
+                    <button type="submit" class="submit-btn">Sign up</button>
+                    <p id="signup-mess" class="message"></p>
+                </form>
+            </div>
+            <div id="cars-box">
+                <div class="car-control">
+                    <form id="car-form" autocomplete="off">
+                        <input type="text" id="mod-inp" class="input-field" placeholder="Car Model">
+                        <br><br>
+                        <button type="button" class="submit-btn" onclick="model()">Search Car</button>
+                        <br><br>
+                        <select class="input-field" onchange="company(value)">
+                            <option selected disabled>Select Company</option>
+                            <option value="Hyundai">Hyundai</option>
+                            <option value="Honda">Honda</option>
+                            <option value="Maruti Suzuki">Maruti Suzuki</option>
+                            <option value="BMW">BMW</option>
+                            <option value="Renault">Renault</option>
+                            <option value="Ford">Ford</option>
+                            <option value="Volkswagen">Volkswagen</option>
+                        </select>
+                        <br><br>
+                        <button type="button" class="submit-btn" onclick="allCars()">Show All Cars</button>
+                        <br><br>
+                        <a class="type-link" href="javascript:type('SUV')">SUV Cars</a><br><br>
+                        <a class="type-link" href="javascript:type('MUV')">MUV Cars</a><br><br>
+                        <a class="type-link" href="javascript:type('Coupe')">Coupe Cars</a><br><br>
+                        <a class="type-link" href="javascript:type('Sedan')">Sedan Cars</a><br><br>
+                        <a class="type-link" href="javascript:type('Hatchback')">Hatchback Cars</a><br><br>
+                    </form>
+                </div>
+                <div class="car-result">
+                    <div id="car">
+                        <div class="car-div1">
+                            <button class="submit-btn" type="button" onclick="showCars('dec')">Previous</button><br><br>
+                            <button class="submit-btn" type="button" onclick="showCars('inc')">Next</button><br><br>
+                            <span id="car-num"></span><br><br>
+                            <img id="pho" src="">
+                        </div>
+                        <div class="car-div2">
+                            <span id="mod"></span><br><br>
+                            <span id="comp"></span><br><br>
+                            <span id="typ"></span><br><br>
+                            <span id="eng"></span><br><br>
+                            <span id="mil"></span><br><br>
+                            <span id="tran"></span><br><br>
+                            <span id="fue"></span><br><br>
+                            <span id="pri"></span><br><br>
+                        </div>
+                    </div>
+                    <div id="car-mess"></div>
+                </div>
+            </div>
+            <div id="service-box">
+                <div class="block" id="service">
+                    <img src="https://livedemo00.template-help.com/wt_52961/images/box-nina-img-1-370x250.jpg">
+                    <span class="name">DRIVETRAIN REPAIR</span>
+                    <p class="details">
+                        We have been offering drivetrain repair services for cars and trucks since our inception. In more than 1,700
+                        stores across America, our tire and auto service professionals provide top-notch car drivetrain repairs and
+                        services. The drivetrain spans the length of your vehicle, from the engine transmission and to the axles.
+                    </p>
+                </div>
+                <div class="block" id="service">
+                    <img src="https://livedemo00.template-help.com/wt_52961/images/box-nina-img-2-370x250.jpg">
+                    <span class="name">ENGINE REPAIR</span>
+                    <p class="details">
+                        Take care of your engine, and your car has a better chance of lasting for the long haul. If you
+                        stay on top of your engine maintenance and tend to any engine repairs immediately, your car or
+                        truck will last longer. With something as important as car engine repair, you can fully trust
+                        the experts at Car Repair. We are always happy to help you.
+                    </p>
+                </div>
+                <div class="block" id="list">
+                    <ul>
+                        <li>
+                            <span class="icon"><img src="https://livedemo00.template-help.com/wt_52961/images/box-endurance-img-01.png"></span>
+                            <span class="title">A/C Service</span>
+                        </li>
+                        <li>
+                            <span class="icon"><img src="https://livedemo00.template-help.com/wt_52961/images/box-endurance-img-03.png"></span>
+                            <span class="title">Battery Service</span>
+                        </li>
+                        <li>
+                            <span class="icon"><img src="https://livedemo00.template-help.com/wt_52961/images/box-endurance-img-04.png"></span>
+                            <span class="title">Break Service</span>
+                        </li>
+                        <li>
+                            <span class="icon"><img src="https://livedemo00.template-help.com/wt_52961/images/box-endurance-img-07.png"></span>
+                            <span class="title">Oil Change</span>
+                        </li>
+                        <li>
+                            <span class="icon"><img src="https://livedemo00.template-help.com/wt_52961/images/box-endurance-img-10.png"></span>
+                            <span class="title">Wheel Balance</span>
+                        </li>
+                        <li>
+                            <span class="icon"><img src="https://livedemo00.template-help.com/wt_52961/images/box-endurance-img-08.png"></span>
+                            <span class="title">Radiator Service</span>
+                        </li>
+                        <li>
+                            <span class="icon"><img src="https://livedemo00.template-help.com/wt_52961/images/box-endurance-img-02.png"></span>
+                            <span class="title">Exhaust System</span>
+                        </li>
+                        <li>
+                            <span class="icon"><img src="https://livedemo00.template-help.com/wt_52961/images/box-endurance-img-01.png"></span>
+                            <span class="title">Cooling System</span>
+                        </li>
+                        <li>
+                            <span class="icon"><img src="https://livedemo00.template-help.com/wt_52961/images/box-endurance-img-06.png"></span>
+                            <span class="title">Engine Tune-Up</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="about-box"> 
+                <div class="block">
+                    <img src="https://cdn1.iconfinder.com/data/icons/technology-devices-2/100/Profile-512.png">
+                    <span class="name">CHRIS HOLLAND</span>
+                    <p class="details">
+                        Pellentesque vitae tortor id neque fermentum pretium. Maecenas ac lacus ut neque rhoncus laoreet sed
+                        id tellus. Donec justo tellus, tincidunt vitae pellentesque nec, pharetra a orci. Praesent nunc.
+                    </p>
+                    <span class="details">Telephone: +1 800 603 6035</span>
+                    <span class="details">E-mail: mail@demolink.org</span>
+                </div>
+                <div class="block">
+                    <img src="https://cdn1.iconfinder.com/data/icons/technology-devices-2/100/Profile-512.png">
+                    <span class="name">PATRICK POOL</span>
+                    <p class="details">
+                        Donec justo tellus, tincidunt vitae pellentesque nec, pharetra a orci. Praesent nunc nunc, egestas eget
+                        elementum sed; rutrum eget metus! Vestibulum congue congue dui ut porta. Aenean laoreet viverra turpis.
+                    </p>
+                    <span class="details">Telephone: +1 800 603 6035</span>
+                    <span class="details">E-mail: mail@demolink.org</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/Index.js"></script>
+</body>
+</html>
