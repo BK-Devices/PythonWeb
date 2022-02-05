@@ -7,6 +7,7 @@ app=Flask(__name__)
 def car():
     dic={}
     model = request.form.get('model')
+    # model = request.args.get('model')
     try:
         con = my.connect(host='bjcu0zbekj0zsyjkre50-mysql.services.clever-cloud.com', user='ubqfrixkywybpwio', password='ddXa2iftDKRei4WVSL8O', database='bjcu0zbekj0zsyjkre50')
         curs = con.cursor()
