@@ -11,6 +11,7 @@
 ## Files:
 
 - Django project files
+- Move "Cars" folder in "Scripts" folder of virtual environment
 - Get type rest api program file
 - Post type rest api program files
 
